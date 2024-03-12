@@ -1,0 +1,398 @@
+@font-face {
+	font-family: "Hamburg";
+	src: url("./resources/fonts/Hamburg.ttf");
+}
+
+body {
+	font-family: sans-serif;
+}
+
+html {
+	width: 100vw;
+	height: 100vh;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.title {
+	font-family: "Hamburg", sans-serif;
+	font-size: 4.5rem;
+	padding: 5%;
+	border-radius: 10px;
+	border: 1px solid black;
+	margin-top: 50px;
+	background-color: #4b8048;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.main-content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.hide {
+	display: none;
+}
+
+.thermometer {
+	height: 100vh;
+	width: 200px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+}
+
+.thermometer-base,
+.thermometer-body {
+	background-color: #ededfa;
+	border: 15px solid #d8d9e8;
+}
+
+.thermometer-base,
+.thermometer-base-fill {
+	margin: 0 auto;
+	border-radius: 50%;
+	z-index: 0;
+}
+
+.thermometer-base {
+	height: 120px;
+	width: 120px;
+}
+
+.thermometer-base::before {
+	content: "";
+	background-color: #db1d1d;
+	height: 15px;
+	width: 40px;
+	position: absolute;
+	left: 80px;
+	z-index: 1;
+}
+
+.thermometer-base-fill {
+	background-color: #db1d1d;
+	height: 98px;
+	width: 98px;
+	position: relative;
+	top: 11px;
+	transition: top 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.thermometer-body,
+.thermometer-body-fill {
+	margin: 0 auto;
+	border-radius: 50px 50px 0 0;
+	z-index: 1;
+}
+
+.thermometer-body {
+	height: 325px;
+	width: 60px;
+	border-bottom: 0;
+	position: relative;
+	bottom: -23px;
+	overflow: hidden;
+}
+
+.thermometer-body-fill {
+	background-color: #db1d1d;
+	height: 320px;
+	width: 40px;
+	position: relative;
+	top: 300px;
+	/* lowest value is 11px - highest value is 300px */
+	transition: top 0.5s linear;
+}
+
+.controls {
+	text-align: center;
+	overflow: visible;
+}
+
+h1 {
+	margin: 2vh;
+}
+
+i {
+	pointer-events: none;
+}
+
+.very-cold-bg {
+	background: rgb(187, 237, 181);
+	background: linear-gradient(0deg,
+			rgba(170, 255, 160, 0.8) 0%,
+			rgba(91, 173, 87, 0.6) 25%,
+			rgba(85, 156, 91, 0.5) 50%,
+			rgba(51, 128, 70, 0.4) 75%,
+			rgba(26, 92, 50, 0.3) 100%);
+}
+
+.cold-bg {
+	background: rgb(210, 223, 181);
+	background: linear-gradient(0deg,
+			rgba(203, 228, 149, 0.8) 0%,
+			rgba(176, 212, 137, 0.6) 25%,
+			rgba(147, 180, 131, 0.5) 50%,
+			rgba(91, 136, 61, 0.4) 75%,
+			rgba(76, 92, 38, 0.3) 100%);
+}
+
+.warm-bg {
+	background: rgb(237, 204, 151);
+	background: linear-gradient(0deg,
+			rgba(237, 204, 151, 0.8) 0%,
+			rgba(217, 176, 112, 0.6) 25%,
+			rgba(191, 143, 63, 0.5) 50%,
+			rgba(164, 115, 29, 0.4) 75%,
+			rgba(139, 87, 4, 0.3) 100%);
+}
+
+.hot-bg {
+	background: rgb(232, 141, 89);
+	background: linear-gradient(0deg,
+			rgba(232, 141, 89, 0.8) 0%,
+			rgba(217, 109, 52, 0.6) 25%,
+			rgba(191, 78, 11, 0.5) 50%,
+			rgba(164, 51, 0, 0.4) 75%,
+			rgba(139, 33, 0, 0.3) 100%);
+}
+
+.very-hot-bg {
+	background: rgb(232, 70, 36);
+	background: linear-gradient(0deg,
+			rgba(232, 70, 36, 0.8) 0%,
+			rgba(217, 40, 15, 0.6) 25%,
+			rgba(191, 16, 0, 0.5) 50%,
+			rgba(164, 0, 0, 0.4) 75%,
+			rgba(139, 0, 0, 0.3) 100%);
+}
+
+#controls-and-display {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 90vh;
+	height: 90vh;
+}
+
+#controls {
+	margin: 1em;
+	width: fit-content;
+	display: flex;
+	
+}
+
+#display-grid {
+	width: 100%;
+	flex-grow: 1;
+	border-radius: 10px;
+	border: 1px solid black;
+	background-color: #FDF0D5;
+	display: grid;
+	background-image:
+		linear-gradient(green, green),
+		url('resources/sprites/grass.png');
+	background-size: cover;
+	background-blend-mode: multiply;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+}
+
+.actorCard {
+	position: relative;
+}
+
+.actorImage {
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+}
+
+.hpBar {
+	position: absolute;
+	width: 100%;
+	height: 10%;
+	top: -10%;
+	background-color: red;
+	margin: 0;
+}
+
+.health {
+	height: 100%;
+	background-color: green;
+}
+
+.actors {
+	width: 20vw;
+	height: 85vh;
+	border-radius: 10px;
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: first baseline;
+	background-color: #4b8048;
+	font-family: "Hamburg", sans-serif;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+	font-size: 2rem;
+}
+
+.controls {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.card {
+	font-size: 1rem;
+	font-family: sans-serif;
+	width: 17vw;
+	height: 15vh;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	border-radius: 10px;
+	border: 1px solid black;
+	box-shadow: 7px 7px 3px rgba(0, 0, 0, 0.2);
+	margin-bottom: 2vh;
+	background-color: #5ea559;
+}
+
+.infos {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.name {
+	font-weight: bold;
+}
+
+.stats {
+	text-align: justify;
+}
+
+#home.active {
+	margin-left: 100%;
+}
+
+#button.active {
+	margin-left: 100%;
+}
+
+.home-screen {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('/src/resources/sprites/carte.jpg');
+	z-index: 5;
+	margin-left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	filter: blur(2.5px);
+	transition: all 1s ease-in-out;
+}
+
+#button {
+	position: absolute;
+	filter: none;
+	backdrop-filter: none;
+	z-index: 10;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: all 1s ease-in-out;
+}
+
+.result {
+	position: absolute;
+	height: 60px;
+	width: auto;
+	z-index: 10;
+	padding: 2%;
+	border-radius: 15px;
+	border: 1px solid black;
+	margin-top: 20vh;
+}
+
+.result.active {
+	display: none;
+}
+
+#link {
+	margin-top: -30vh;
+	--border-radius: 24px;
+	--border-width: 8px;
+
+	appearance: none;
+	position: relative;
+	padding: 1em 2em;
+	border: 0;
+	background-color: transparent;
+	font-family: "Montserrat", sans-serif;
+	font-size: 2em;
+	font-weight: 600;
+	color: #fff;
+	background-color: #161724;
+	border-radius: 30px;
+	text-decoration: none;
+}
+
+#link::after {
+	--m-i: linear-gradient(#000, #000);
+	--m-o: content-box, padding-box;
+
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	padding: var(--border-width);
+	border-radius: var(--border-radius);
+	background-image: conic-gradient(
+		#488cfb,
+		#29dbbc,
+		#ddf505,
+		#ff9f0e,
+		#e440bb,
+		#655adc,
+		#488cfb
+	);
+
+	mask-image: var(--m-i), var(--m-i);
+	mask-origin: var(--m-o);
+	mask-clip: var(--m-o);
+	mask-composite: exclude;
+	-webkit-mask-composite: destination-out;
+
+	filter: hue-rotate(0);
+	animation: hue linear 500ms infinite;
+	animation-play-state: paused;
+	box-sizing: border-box;
+}
+
+#link:hover::after {
+	animation-play-state: running;
+}
+
+@keyframes hue {
+	to {
+		filter: hue-rotate(1turn);
+	}
+}

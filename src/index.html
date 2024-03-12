@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="index.css">
+  <script type="module" src="index.ts"></script>
+
+  <audio id="myAudio" loop>
+    <source src="resources/Chinese Rap Full.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'audio HTML5.
+  </audio>
+</head>
+
+<body class="very-cold-bg">
+
+  <div class="home-screen" id="home">
+  </div>
+
+  <div id="button">
+    <a href="#" class="animated-button1" id="link" onclick="homeSlide()">Play</a>
+    <div class="result active" id="res"><h2></h2></div>
+  </div>
+
+  <img src="resources/sprites/new_ignorant.png" class="hide" id="ignorantSprite">
+  <img src="resources/sprites/pirate.png" class="hide" id="goodGuySprite">
+  <img src="resources/sprites/spaghetti_on_ground.png" class="hide" id="spaghettiMonsterSprite">
+  <img src="resources/sprites/pope.png" class="hide" id="ignoranceSpreaderSprite">
+  <img src="resources/sprites/ground.png" class="hide" id="groundSprite">
+  <img src="resources/sprites/spawner_on_ground.png" class="hide" id="spawnerSprite">
+  <img src="resources/sprites/waypoint.png" class="hide" id="waypointSprite">
+  <img src="resources/sprites/grass.png" class="hide" id="grassSprite">
+  <div class="main-content">
+    <div class="thermometer">
+      <h1 class="title">Pastafarist</h1>
+      <div class="thermometer-body">
+        <div class="thermometer-body-fill"></div>
+      </div>
+      <div class="thermometer-base">
+        <div class="thermometer-base-fill"></div>
+      </div>
+    </div>
+    <div id="controls-and-display">
+      <div id="display-grid"></div>
+      <div id="controls">
+        <input id="speed-slider" type="range" min="0" max="5" value="1" step="0.1">
+        <span id="speed-value"></span>
+      </div>
+    </div>
+    <div class="actors">
+      <h1>Actors</h1>
+      <div class="controls">
+        <div class="card">
+          <img src="resources/sprites/new_ignorant.png" alt="ignorant" width="70" height="70">
+          <div class="infos">
+            <div class="name">Ignorant</div>
+            <ul class="stats">
+              <li>Hunger : 10</li>
+              <li>Faith : 100</li>
+              <li>Speed : 1</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <img src="resources/sprites/pope.png" alt="pope" width="70" height="70">
+          <div class="infos">
+            <div class="name">Pope</div>
+            <ul class="stats">
+              <li>Conviction : 5</li>
+              <li>Faith : 70</li>
+              <li>Speed : 2</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <img src="resources/sprites/pirate.png" alt="pirate" width="70" height="70">
+          <div class="infos">
+            <div class="name">Pirate</div>
+            <ul class="stats">
+              <li>Conviction : 9</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <img src="resources/sprites/FlyingSpaghettiMonster.png" alt="Spaghetti Monster" width="70" height="70">
+          <div class="infos">
+            <div class="name">Spaghetti Monster</div>
+            <ul class="stats">
+              <li>Faith : 100</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  const FILL_HEIGHT = [
+    "very-hot",
+    "hot",
+    "warm",
+    "cold",
+    "very-cold"
+  ];
+
+  function setTemperature(hp, hp_max) {
+    if (hp < 0) {
+      hp = 0;
+    }
+
+    i = (289 * hp) / hp_max;
+    let tempFill = document.querySelector(".thermometer-body-fill");
+    tempFill.style.setProperty("top", `${i+11}px`);
+    document.body.className = `${FILL_HEIGHT[Math.trunc(i / 58)]}-bg`;
+
+  }
+
+</script>
+
+
+<script>
+  var audio = document.getElementById("myAudio");
+
+  function playMusic() {
+    audio.play();
+  }
+  playMusic();
+
+  //This is unfortunately dumb but I have to do it :(
+  document.getElementById("speed-slider").value = 1;
+  document.getElementById("speed-value").textContent = "1x"
+
+</script>
+
+<script>
+
+  function homeSlide() {
+    document.getElementById("home").classList.toggle("active");
+    document.getElementById("button").classList.toggle("active");
+    playMusic();
+  }
+
+</script>
+
+</html>

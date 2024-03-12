@@ -1,0 +1,350 @@
+@font-face {
+  font-family: Hamburg;
+  src: url("Hamburg.202254c9.ttf");
+}
+
+body {
+  font-family: sans-serif;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  background-color: #4b8048;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin-top: 50px;
+  padding: 5%;
+  font-family: Hamburg, sans-serif;
+  font-size: 4.5rem;
+  box-shadow: 0 0 10px #000c;
+}
+
+.main-content {
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.thermometer {
+  height: 100vh;
+  width: 200px;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.thermometer-base, .thermometer-body {
+  background-color: #ededfa;
+  border: 15px solid #d8d9e8;
+}
+
+.thermometer-base, .thermometer-base-fill {
+  z-index: 0;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.thermometer-base {
+  height: 120px;
+  width: 120px;
+}
+
+.thermometer-base:before {
+  content: "";
+  height: 15px;
+  width: 40px;
+  z-index: 1;
+  background-color: #db1d1d;
+  position: absolute;
+  left: 80px;
+}
+
+.thermometer-base-fill {
+  height: 98px;
+  width: 98px;
+  background-color: #db1d1d;
+  transition: top .5s cubic-bezier(.33, 1, .68, 1);
+  position: relative;
+  top: 11px;
+}
+
+.thermometer-body, .thermometer-body-fill {
+  z-index: 1;
+  border-radius: 50px 50px 0 0;
+  margin: 0 auto;
+}
+
+.thermometer-body {
+  height: 325px;
+  width: 60px;
+  border-bottom: 0;
+  position: relative;
+  bottom: -23px;
+  overflow: hidden;
+}
+
+.thermometer-body-fill {
+  height: 320px;
+  width: 40px;
+  background-color: #db1d1d;
+  transition: top .5s linear;
+  position: relative;
+  top: 300px;
+}
+
+.controls {
+  text-align: center;
+  overflow: visible;
+}
+
+h1 {
+  margin: 2vh;
+}
+
+i {
+  pointer-events: none;
+}
+
+.very-cold-bg {
+  background: linear-gradient(0deg, #aaffa0cc 0%, #5bad5799 25%, #559c5b80 50%, #33804666 75%, #1a5c324d 100%);
+}
+
+.cold-bg {
+  background: linear-gradient(0deg, #cbe495cc 0%, #b0d48999 25%, #93b48380 50%, #5b883d66 75%, #4c5c264d 100%);
+}
+
+.warm-bg {
+  background: linear-gradient(0deg, #edcc97cc 0%, #d9b07099 25%, #bf8f3f80 50%, #a4731d66 75%, #8b57044d 100%);
+}
+
+.hot-bg {
+  background: linear-gradient(0deg, #e88d59cc 0%, #d96d3499 25%, #bf4e0b80 50%, #a4330066 75%, #8b21004d 100%);
+}
+
+.very-hot-bg {
+  background: linear-gradient(0deg, #e84624cc 0%, #d9280f99 25%, #bf100080 50%, #a4000066 75%, #8b00004d 100%);
+}
+
+#controls-and-display {
+  width: 90vh;
+  height: 90vh;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+#controls {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1em;
+  display: flex;
+}
+
+#display-grid {
+  width: 100%;
+  background-blend-mode: multiply;
+  background-color: #fdf0d5;
+  background-image: linear-gradient(green, green), url("grass.8aaeac97.png");
+  background-size: cover;
+  border: 1px solid #000;
+  border-radius: 10px;
+  flex-grow: 1;
+  display: grid;
+  box-shadow: 0 0 20px #000;
+}
+
+.actorCard {
+  position: relative;
+}
+
+.actorImage {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+}
+
+.hpBar {
+  width: 100%;
+  height: 10%;
+  background-color: red;
+  margin: 0;
+  position: absolute;
+  top: -10%;
+}
+
+.health {
+  height: 100%;
+  background-color: green;
+}
+
+.actors {
+  width: 20vw;
+  height: 85vh;
+  align-items: center;
+  justify-content: first baseline;
+  background-color: #4b8048;
+  border: 1px solid #000;
+  border-radius: 10px;
+  flex-direction: column;
+  font-family: Hamburg, sans-serif;
+  font-size: 2rem;
+  display: flex;
+  box-shadow: 0 0 10px #000;
+}
+
+.controls {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
+
+.card {
+  width: 17vw;
+  height: 15vh;
+  background-color: #5ea559;
+  border: 1px solid #000;
+  border-radius: 10px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 2vh;
+  font-family: sans-serif;
+  font-size: 1rem;
+  display: flex;
+  box-shadow: 7px 7px 3px #0003;
+}
+
+.infos {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.stats {
+  text-align: justify;
+}
+
+#home.active, #button.active {
+  margin-left: 100%;
+}
+
+.home-screen {
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  filter: blur(2.5px);
+  background-image: url("carte.d5087308.jpg");
+  justify-content: center;
+  align-items: center;
+  margin-left: 0;
+  transition: all 1s ease-in-out;
+  display: flex;
+  position: absolute;
+}
+
+#button {
+  filter: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-in-out;
+  display: flex;
+  position: absolute;
+}
+
+.result {
+  height: 60px;
+  width: auto;
+  z-index: 10;
+  border: 1px solid #000;
+  border-radius: 15px;
+  margin-top: 20vh;
+  padding: 2%;
+  position: absolute;
+}
+
+.result.active {
+  display: none;
+}
+
+#link {
+  --border-radius: 24px;
+  --border-width: 8px;
+  appearance: none;
+  color: #fff;
+  background-color: #161724;
+  border: 0;
+  border-radius: 30px;
+  margin-top: -30vh;
+  padding: 1em 2em;
+  font-family: Montserrat, sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+}
+
+#link:after {
+  --m-i: linear-gradient(#000, #000);
+  --m-o: content-box, padding-box;
+  content: "";
+  width: 100%;
+  height: 100%;
+  padding: var(--border-width);
+  border-radius: var(--border-radius);
+  -webkit-mask-image: var(--m-i), var(--m-i);
+  mask-image: var(--m-i), var(--m-i);
+  -webkit-mask-origin: var(--m-o);
+  mask-origin: var(--m-o);
+  -webkit-mask-clip: var(--m-o);
+  mask-clip: var(--m-o);
+  -webkit-mask-composite: destination-out;
+  filter: hue-rotate();
+  box-sizing: border-box;
+  background-image: conic-gradient(#488cfb, #29dbbc, #ddf505, #ff9f0e, #e440bb, #655adc, #488cfb);
+  animation: .5s linear infinite paused hue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+#link:hover:after {
+  animation-play-state: running;
+}
+
+@keyframes hue {
+  to {
+    filter: hue-rotate(1turn);
+  }
+}
+
+/*# sourceMappingURL=index.61d3354a.css.map */

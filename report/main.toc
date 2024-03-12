@@ -1,0 +1,21 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Sujet}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Contraintes}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Theme}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Analyse du sujet}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Entité Acteur}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Système de phase}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Monde}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Réalisation}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Génération aléatoire de chemin}{5}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Génération des points de passage}{5}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Liaison des points de passage}{6}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Joueur automatique}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Joueur intelligent}{6}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Joueur aléatoire}{7}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Diversification dynamique des comportements}{7}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Choix d'implémentation des décorateurs, ou générateurs d'action}{7}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Exemple concret}{8}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Mise à jour des actions et des générateurs}{8}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Pour aller plus loin}{9}{subsubsection.3.3.4}%
+\contentsline {section}{\numberline {4}Conclusion}{9}{section.4}%
