@@ -23,11 +23,10 @@ function spawnPhase(oldActors: Array<Actor>, phaseResult: Array<ReturnType<Actor
 }
 
 /**
- * The executePhase function for the "spawn" phase.
- * All it does is spawn new actors if there are to be spawned.
+ * The executePhase function for the "play" phase.
  * @param oldActors The actors before the phase
  * @param phaseResult The results of the phase
- * @returns A proposal for the actors after executing the "spawn" phase
+ * @returns A proposal for the actors after executing the "play" phase
  */
 function playPhase(oldActors: Array<Actor>, phaseResult: Array<ReturnType<ActorActions["play"]>>): Array<Actor> {
 	return oldActors.concat(
